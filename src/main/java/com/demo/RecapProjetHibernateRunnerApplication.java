@@ -43,13 +43,18 @@ MessageService messageService;
 		//messageService.sendMessage(m);
 		List<User> users=new ArrayList<User>();
 		
-		users=userService.readUsers();
+		//users=userService.authentification("test2@gmail.com","mypass2");
+		users=userService.findByNograde("user");
+		if(users.isEmpty())
+			System.out.println("inconnu");
+		else
+		{
 		for(User us: users)
 		{
 			System.out.println(us.toString());
 		
 		}
-		
+		}
 		
 		
 		

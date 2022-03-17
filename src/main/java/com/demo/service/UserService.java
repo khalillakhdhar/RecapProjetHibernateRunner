@@ -12,6 +12,7 @@ import com.demo.repository.UserRepository;
 public class UserService {
 @Autowired
 UserRepository userRepository;
+// méthodes prédéfinies
 public User createUser(User u)
 {
 	return userRepository.save(u);
@@ -26,4 +27,17 @@ public void deleteUser(int id)
 userRepository.deleteById(id);	
 }
 
+// méthodes personalisé
+public List<User> searchWithName(String nom)
+{
+return userRepository.findByNom(nom);	
+}
+public List<User> authentification(String email,String password)
+{
+return userRepository.findByEmailAndPassword(email, password);	
+}
+public List<User> findByNograde(String grade)
+{
+return userRepository.findByGradeIsNot(grade);	
+}
 }
