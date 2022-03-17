@@ -35,8 +35,8 @@ MessageService messageService;
 	@Override
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
-		User u1= new User("test2@gmail.com", "admin2", "mypass2", "user2", "userfirstname2");
-		User u2=userService.createUser(u1); // pour récupérer l'instance qui sera insérer 
+		//User u1= new User("test2@gmail.com", "admin2", "mypass2", "user2", "userfirstname2");
+		//User u2=userService.createUser(u1); // pour récupérer l'instance qui sera insérer 
 		//Document d1=new Document("document pdf du cours", "www.duranco.com/cours", "cours java EE", u2);
 		//documentService.addDocument(d1);
 		//Message m=new Message("bonjour","hello hibernate it is me spring", u2);
@@ -47,6 +47,10 @@ MessageService messageService;
 		for(User us: users)
 		{
 			System.out.println(us.toString());
+			for(Message ms: us.getMessage())
+			{
+				ms.toString();
+			}
 		
 		}
 		
